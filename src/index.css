@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Remove the 'body' block with background-color and color entirely */
+/* Use CSS variables so theme toggling via the `dark` class updates values */
+body {
+  background-color: var(--bg, #030712);
+  color: var(--fg, #f1f5f9);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
+/* Default (light) theme variables */
+:root {
+  --bg: #ffffff;
+  --fg: #0f172a;
+}
+
+/* Dark theme variables applied when <html> has the `dark` class */
+:root.dark,
+.dark {
+  --bg: #030712; /* matches slate.950 */
+  --fg: #f1f5f9;
+}
